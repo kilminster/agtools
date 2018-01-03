@@ -11,7 +11,7 @@ echo "kgpg" >> config/package-lists/my.list.chroot
 echo "qrencode" >> config/package-lists/my.list.chroot
 echo "feh" >> config/package-lists/my.list.chroot
 cp ../usbmount_0.0.22_all.deb config/packages.chroot/
-mkdir -p config/includes.chroot/usr/local/SecretTools/
+mkdir -p config/includes.chroot/usr/local/sharesecret/
 cp ../../sharesecret/*.py config/includes.chroot/usr/local/sharesecret/
 cp ../../sharesecret/*.txt config/includes.chroot/usr/local/sharesecret/
 mkdir -p config/includes.chroot/usr/local/bin/
