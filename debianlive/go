@@ -1,0 +1,19 @@
+rm -rf live-default
+mkdir live-default
+cd live-default
+lb config --bootappend-live "toram boot=live components quiet splash"
+echo "live-task-xfce" >> config/package-lists/my.list.chroot
+echo "lockfile-progs" >> config/package-lists/my.list.chroot
+echo "udev" >> config/package-lists/my.list.chroot
+echo "util-linux" >> config/package-lists/my.list.chroot
+echo "pmount" >> config/package-lists/my.list.chroot
+echo "kgpg" >> config/package-lists/my.list.chroot
+echo "qrencode" >> config/package-lists/my.list.chroot
+echo "feh" >> config/package-lists/my.list.chroot
+cp ../usbmount_0.0.22_all.deb config/packages.chroot/
+mkdir -p config/includes.chroot/usr/local/SecretTools/
+cp ../../sharesecret/*.py config/includes.chroot/usr/local/sharesecret/
+cp ../../sharesecret/*.txt config/includes.chroot/usr/local/sharesecret/
+mkdir -p config/includes.chroot/usr/local/bin/
+cp ../combineshares config/includes.chroot/usr/local/bin/
+lb build
